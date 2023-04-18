@@ -75,7 +75,7 @@ Dev Server settings
   eleventyConfig.addPassthroughCopy({ "_source/assets/static": "/" });
   eleventyConfig.addPassthroughCopy('_source/assets/images');
   if (isProduction || isStaging) {
-    eleventyConfig.addPassthroughCopy({ "_tinacms/": "/_public/admin/" });
+    eleventyConfig.addPassthroughCopy({ "_tinacms/": "/admin/" });
   }
 
   return {
