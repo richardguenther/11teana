@@ -1,0 +1,31 @@
+<!-- Include these scripts somewhere on the page:
+<script
+	defer
+	src="https://unpkg.com/@alpinejs/ui@3.10.5-beta.8/dist/cdn.min.js"
+></script>
+<script defer src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"></script> -->
+
+<!-- Toggle -->
+<div
+	x-data="{ value: false }"
+	x-switch:group
+	class="flex items-center justify-center"
+>
+	<!-- Label -->
+	<label x-switch:label class="text-gray-900 font-medium">
+		Send notifications
+	</label>
+
+	<!-- Button -->
+	<button
+		x-switch
+		x-model="value"
+		:class="$switch.isChecked ? 'bg-slate-400' : 'bg-slate-300'"
+		class="relative ml-4 inline-flex w-14 rounded-full py-1 transition"
+	>
+		<span
+			:class="$switch.isChecked ? 'translate-x-7' : 'translate-x-1'"
+			class="bg-white h-6 w-6 rounded-full transition shadow-md"
+		></span>
+	</button>
+</div>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+
+
+
+    <title>
+      {% if title %}
+        {{ title | escape }} |
+      {% endif %}
+      {{ site.title | escape }}</title>
+
+    <meta name="description" content="{% if description %}{{ description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {%- if noindex -%}
+      <meta name="robots" content="noindex, nofollow">
+    {%- endif -%}
+
+    {%- if canonical -%}
+      <link rel="canonical" href="{{ canonical }}">
+    {%- else -%}
+      <link rel="canonical" href="{{ env.baseUrl }}{{ page.url }}">
+    {%- endif -%}
+
+    <link
+      rel="alternate icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon-32x32.png">
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/logo_sws.svg">
+    <link
+      rel="mask-icon"
+      href="/favicon.svg"
+      color="#000000">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
+    {%- if styles -%}
+      {% for style in styles %}
+        <link
+          rel="stylesheet"
+          href={{ style | prepend: "/assets/css/" }}
+          media="all">
+      {% endfor %}
+    {%- endif -%}
+
+    {%- if page.style -%}
+      <style>
+        {{ page.style }}
+      </style>
+    {%- endif -%}
+
+
+    {%- if scripts -%}
+      {% for script in scripts %}
+        <script src={{ script | prepend: "/assets/js/" }} type="module"></script>
+      {% endfor %}
+    {%- endif -%}
+
+  </head>
+
+  <body>
+
+
+    {{ content }}
+
+
+
+  </body>
+
+</html>

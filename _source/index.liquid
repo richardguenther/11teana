@@ -1,0 +1,29 @@
+---
+layout: base
+title: Home
+description: Homepage of 11tea
+styles: [tailwind.css, test.css]
+scripts: [alpine.js, app.js]
+
+result: {{ url | concat: stylesheet }}
+---
+<p class="font-bold bg-red-500">Tacho</p>
+<p class="font-bold bg-green-700">Flupp</p>
+<h2>Unterüberschrift</h2>
+
+<div x-data="{ count: 0 }">
+  <button x-on:click="count++">Increment</button>
+
+  <span x-text="count"></span>
+</div>
+
+{% assign myname = "Klaus" %}
+{% render 'vorstellung', name: myname, hobbies: "dings, dings, dangs" %}
+
+
+<div>{{ "02-02-2016" | date: "%B" }}</div>
+
+
+<div>{{ "now" | date: "%Y-%m-%d %H:%M" }}</div>
+
+<div>{{ "Ground control to Major Tom." | split: " " | reverse | join: " " }}</div>

@@ -1,0 +1,92 @@
+<!-- Include these scripts somewhere on the page:
+<script
+	defer
+	src="https://unpkg.com/@alpinejs/ui@3.10.5-beta.8/dist/cdn.min.js"
+></script>
+<script
+	defer
+	src="https://unpkg.com/@alpinejs/focus@3.10.5/dist/cdn.min.js"
+></script>
+<script defer src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"></script> -->
+
+<!-- Radio -->
+<div
+	x-data="{ value: 'laravel' }"
+	x-radio
+	x-model="value"
+	class="max-w-lg w-full"
+>
+	<!-- Radio Label -->
+	<label x-radio:label class="sr-only"
+		>Backend framework: <span x-text="value"></span
+	></label>
+
+	<div class="mt-4 space-y-3">
+		<!-- Option -->
+		<div
+			x-radio:option
+			value="laravel"
+			class="flex cursor-pointer rounded-md border border-gray-200 bg-white p-4 shadow-sm focus:outline-none focus:ring-4 ring-cyan-300/25"
+			:class="{ 'shadow': $radioOption.isChecked }"
+		>
+			<!-- Checked Indicator -->
+			<span
+				:class="{ 'bg-slate-500': $radioOption.isChecked }"
+				class="mt-1 inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full border-2 border-white ring-1 ring-gray-600"
+				aria-hidden="true"
+			></span>
+
+			<span class="ml-3">
+				<!-- Primary Label -->
+				<p x-radio:label>Laravel</p>
+
+				<!-- Secondary Information -->
+				<span x-radio:description class="mt-2 text-sm">
+					A PHP framework built by Taylor Otwell
+				</span>
+			</span>
+		</div>
+
+		<div
+			x-radio:option
+			value="rails"
+			class="flex cursor-pointer rounded-md border border-gray-200 bg-white p-4 shadow-sm focus:outline-none focus:ring-4 ring-cyan-300/25"
+			:class="{ 'shadow': $radioOption.isChecked }"
+		>
+			<span
+				:class="{ 'bg-slate-500': $radioOption.isChecked }"
+				class="mt-1 inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full border-2 border-white ring-1 ring-gray-600"
+				aria-hidden="true"
+			></span>
+
+			<span class="ml-3">
+				<p x-radio:label>Ruby on Rails</p>
+
+				<span x-radio:description class="mt-2 text-sm">
+					A Rails framework built by DHH
+				</span>
+			</span>
+		</div>
+
+		<div
+			x-radio:option
+			value="elixir"
+			class="flex cursor-pointer rounded-md border border-gray-200 bg-white p-4 shadow-sm focus:outline-none focus:ring-4 ring-cyan-300/25"
+			:class="{ 'shadow': $radioOption.isChecked }"
+		>
+			<span
+				:class="{ 'bg-slate-500': $radioOption.isChecked }"
+				class="mt-1 inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full border-2 border-white ring-1 ring-gray-600"
+				aria-hidden="true"
+			></span>
+
+			<span class="ml-3">
+				<p x-radio:label>Phoenix</p>
+
+				<span x-radio:description class="mt-2 text-sm">
+					An Elixir framework built by Chris McCord
+				</span>
+			</span>
+		</div>
+	</div>
+</div>
