@@ -74,9 +74,8 @@ Dev Server settings
   eleventyConfig.addPassthroughCopy('_source/assets/fonts');
   eleventyConfig.addPassthroughCopy({ "_source/assets/static": "/" });
   eleventyConfig.addPassthroughCopy('_source/assets/images');
-  if (isProduction || isStaging) {
-    eleventyConfig.addPassthroughCopy({ "_tinacms/": "/admin/" });
-  }
+  eleventyConfig.addPassthroughCopy({ "_tinacms/": "/admin/" });
+  
 
   return {
     dir: {
