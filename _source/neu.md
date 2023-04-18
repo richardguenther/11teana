@@ -2,4 +2,4 @@
 title: neu
 ---
 
-Hier steht jetzt was anderes
+Was ganz neues jetzt!
