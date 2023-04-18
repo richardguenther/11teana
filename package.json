@@ -37,8 +37,8 @@
     "tina-dev": "tinacms dev",
     "tina-build": "tinacms build",
     "start": "npm-run-all -p 11ty-dev tailwindcss-dev tina-dev",
-    "stage": "npm-run-all -s tailwindcss 11ty-stage tina-build",
-    "build": "npm-run-all -s tailwindcss 11ty-prod tina-build"
+    "stage": "npm-run-all -s tailwindcss tina-build 11ty-stage",
+    "build": "npm-run-all -s tailwindcss tina-build 11ty-prod"
   },
   "dependencies": {
     "@tinacms/cli": "^1.5.6",
